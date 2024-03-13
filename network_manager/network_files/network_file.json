@@ -1,0 +1,11 @@
+{
+    "mode": "normal",
+    "hotspot_ssid": "SELBOX",
+    "hotspot_password": "123456789",
+    "server_ip": "192.168.4.1",
+    "start_ip": "192.168.4.2",
+    "end_ip": "192.168.4.20",
+    "wifi_ssid": "",
+    "wifi_password": "",
+    "reconnect": 0
+}

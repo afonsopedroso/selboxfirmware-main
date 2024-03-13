@@ -1,0 +1,9 @@
+0 * * * *       cd /home/sel/updater/ && ./updater &
+@reboot         sleep 30 && /home/sel/firmware/startApp.sh &
+*  *    * * *   wget -O - -q -t 1 http://localhost/check
+*/15 * * * * wget -O - -q -t 1 http://localhost/reconnect
+HOME=/home/sel/network_manager
+@reboot         python3 -m uvicorn --host 0.0.0.0 --port 80 --log-config log.ini main:app
+
+
+

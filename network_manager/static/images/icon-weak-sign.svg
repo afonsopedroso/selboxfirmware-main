@@ -1,0 +1,10 @@
+<svg id="Icon_Faint_Signal" data-name="Icon Faint Signal" xmlns="http://www.w3.org/2000/svg" width="20" height="14.346">
+    <defs>
+        <style>
+            .cls-2{fill:rgba(224,48,42,.3)}
+        </style>
+    </defs>
+    <path id="Caminho_345" data-name="Caminho 345" d="m330.887 360.784-2.617-2.638a.4.4 0 0 1-.123-.3.41.41 0 0 1 .13-.3 4.484 4.484 0 0 1 5.788 0 .411.411 0 0 1 .028.581l-.016.017-2.612 2.638a.408.408 0 0 1-.578 0z" transform="translate(-321.173 -346.559)" style="fill:#e0302a"/>
+    <path id="Caminho_346" data-name="Caminho 346" class="cls-2" d="M313.663 325.063a6.429 6.429 0 0 0-8.626 0 .406.406 0 0 1-.567-.007l-1.513-1.528a.42.42 0 0 1-.006-.594l.006-.006a9.384 9.384 0 0 1 12.773 0 .42.42 0 0 1 .006.594l-.006.006-1.5 1.528a.406.406 0 0 1-.567.006z" transform="translate(-299.345 -315.459)"/>
+    <path id="Caminho_347" data-name="Caminho 347" class="cls-2" d="M295.329 290.492a11.324 11.324 0 0 0-15.6 0 .4.4 0 0 1-.568 0l-1.513-1.52a.422.422 0 0 1 0-.6 14.281 14.281 0 0 1 19.753 0 .421.421 0 0 1 0 .6l-1.511 1.528a.4.4 0 0 1-.568 0z" transform="translate(-277.528 -284.41)"/>
+</svg>

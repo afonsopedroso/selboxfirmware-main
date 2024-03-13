@@ -1,0 +1,4 @@
+interface=wlan0 
+dhcp-range=x
+domain=wlan     
+address=x

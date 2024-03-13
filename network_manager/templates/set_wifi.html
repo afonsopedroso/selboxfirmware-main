@@ -1,0 +1,131 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+  <div class="main-body">
+    <!-- <img class="livinglab-logo" src="{{ url_for('static', path='/images/livinglab-logo-dark-bg.svg') }}"
+      alt="living-energy-logo" /> -->
+    <p class="form-title title">Select Wi-Fi network</p>
+    <form class="form" action="/" method="post">
+      <!-- {% if not response %} -->
+      <div class="form-header">
+
+
+        <div class="left-side">
+          <h5 class="title">Wi-Fi Network list</h5>
+        </div>
+        <div class="right-side">
+          <a onclick="getWifiList()" class="secondary-style"><img src="../static/images/refresh.svg" alt="refresh" />
+            Refresh
+          </a>
+        </div>
+      </div>
+      <div id="network-list-div" class="network-list">
+      </div>
+      <div class="network-footer">
+        <h5 class="title">Network Access</h5>
+        <div class="input-area">
+          <label>Wi-Fi Network</label>
+          <input id="ssid" type="text" name="ssid" placeholder="Wi-Fi Network" />
+        </div>
+        <div class="input-area">
+          <label>Wi-Fi Password</label>
+          <input type="password" name="password" value="" placeholder="Introduce Wi-Fi password" />
+        </div>
+        <!-- <button style="width:169px; margin-left: auto" class="primary-style">Connect to
+          Network</button> -->
+        <!-- <div style="border-top: 1px solid #c9c9c9;"></div> -->
+        <div class="input-area">
+          <label>Location</label>
+          <input required type="text" name="password" value="" placeholder="Introduce Location" />
+        </div>
+        <div class="input-area">
+          <label>Contracted Power</label>
+          <input required type="text" name="password" value="" placeholder="Introduce Contracted Power" />
+        </div>
+        <div class="input-area">
+          <label>Max Tank Capacity</label>
+          <input required type="text" name="password" value="" placeholder="Introduce Max Tank Capacity" />
+        </div>
+        <div class="input-area">
+          <label>Max Termo Power</label>
+          <input required type="text" name="password" value="" placeholder="Introduce Max Termo Power" />
+        </div>
+        <div class="input-area">
+          <label>CPE</label>
+          <input type="text" name="password" value="" placeholder="Introduce CPE" />
+        </div>
+        <div class="input-area">
+          <label>Main Circuit Breaker Current</label>
+          <input type="text" name="password" value="" placeholder="Introduce Main Circuit Breaker Current" />
+        </div>
+        <div class="input-area">
+          <label>Single Power Line for Termo</label>
+          <input type="text" name="password" value="" placeholder="Introduce Single Power Line for Termo" />
+        </div>
+        <button onClick="" style="width:100px; margin-left: auto;" class="primary-style">Submit</button>
+      </div>
+      <!-- {% else %} -->
+      <img src="../static/images/icon-connection.svg" class="connection-logo" alt="connection-img" />
+      <h4 class="form-title-2 title">Attemption Connection...</h4>
+      <div class="network-response">
+        We have attempted to connect to the network using the details you provided. If the connection fails, hotspot
+        will be re-created
+        within 60 seconds.
+      </div>
+      <!-- {% endif %} -->
+    </form>
+    <img class="sel-logo" src="../static/images/sel-logo-dark-bg.svg" alt="sel-logo" />
+    <p class="footer-text">© 2021 Smart Energy Lab. All rights reserved.</p>
+  </div>
+</body>
+<script>
+  function setWifiName(wifi) {
+    document.getElementById("ssid").value = wifi;
+  }
+  function getWifiList() {
+    if (document.getElementsByClassName("animated-logo").length) {
+      // this is to prevent execution of this method multiple times
+      return;
+    }
+
+    const newtworkListDiv = document.getElementById("network-list-div");
+    // remove previous elements
+    while (newtworkListDiv.firstChild) {
+      newtworkListDiv.removeChild(newtworkListDiv.firstChild);
+    }
+
+    const refreshAnimation = document.createElement("img");
+    refreshAnimation.setAttribute("class", "animated-logo");
+    refreshAnimation.setAttribute("src", "{{ url_for('static', path='/images/refresh.svg') }}");
+
+    newtworkListDiv.appendChild(refreshAnimation);
+
+    fetch('/wifi', {
+      method: 'GET',
+    })
+      .then(response => response.json())
+      .then(result => {
+        result.forEach(networkResult => {
+          const wifiElement = document.createElement("div");
+          wifiElement.setAttribute("class", "network-item active")
+          wifiElement.textContent = networkResult;
+          wifiElement.setAttribute("onclick", `setWifiName('${networkResult}')`);
+          newtworkListDiv.appendChild(wifiElement);
+        })
+      })
+      .finally(() => {
+        // refresh logo will be the first child which will be removed after completing the request
+        newtworkListDiv.removeChild(newtworkListDiv.firstChild);
+      });
+  }
+  document.addEventListener("DOMContentLoaded", getWifiList());
+</script>
+
+</html>

@@ -1,0 +1,279 @@
+body {
+    margin: 0px;
+}
+
+.main-body {
+    font-family: "Source Sans Pro";
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    font-size: 14px;
+    color: #273043;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #292639 21%, #385b6b 73%);
+    min-height: 100%;
+    height: auto;
+    overflow: auto;
+}
+
+.livinglab-logo {
+    margin-top: 48px;
+    width: 300px;
+}
+
+.sel-logo {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: "Fira Sans";
+    font-weight: 600;
+}
+
+.form-title-2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.form-title {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #fff;
+}
+
+.strong-text {
+    font-weight: 600;
+}
+
+.form {
+    padding: 15px 25px 25px 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 75%;
+    max-width: 420px;
+    min-height: 200px;
+    text-align: center;
+}
+
+.form-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.form h5,
+.form p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.form h5 {
+    font-size: 19px;
+    text-align: start;
+}
+
+.form-header .right-side,
+.network-item .right-side {
+    margin-left: auto;
+}
+
+.network-list {
+    position: relative;
+    overflow-y: auto;
+    height: 150px;
+    background-color: #ebebeb;
+    border-radius: 8px;
+    border: solid 0.2px #9a9a9a;
+    margin-bottom: 30px;
+}
+
+.network-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px 10px 10px;
+    border-bottom: solid 0.2px #9a9a9a;
+}
+
+.network-item span {
+    margin-left: 12px;
+}
+
+.network-item:hover {
+    background-color: #273043;
+    color: #ffffff;
+}
+
+
+/* 
+.network-item.active {
+    background-color: #273043;
+    color: #ffffff;
+} */
+
+.network-item.active img {
+    filter: brightness(0) invert(1);
+}
+
+.network-footer input,
+.network-footer button {
+    width: 100%;
+}
+
+.network-footer>*:not(:last-child) {
+    margin-bottom: 22px;
+}
+
+.network-footer p {
+    text-align: center;
+}
+
+.input-area {
+    position: relative;
+}
+
+.input-area label {
+    position: absolute;
+    background-color: white;
+    height: fit-content;
+    color: #41c5d3;
+    top: 0;
+    margin-top: -8px;
+    bottom: 0;
+    left: 10px;
+    transition: 0.2s;
+}
+
+.input-area input:focus+label {
+    top: 0;
+    margin-top: -8px;
+    bottom: 0;
+    left: 10px;
+}
+
+.footer-text {
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.strong-access {
+    color: #42c77b;
+}
+
+.normal-access {
+    color: #e6a246;
+}
+
+.weak-access {
+    color: #d01438;
+}
+
+a,
+button,
+input {
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #41c5d3;
+    text-decoration: none;
+}
+
+button,
+a,
+.network-item {
+    cursor: pointer;
+}
+
+a,
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a img,
+button img {
+    margin-right: 4px;
+    height: 14px;
+}
+
+button.secondary-style {
+    background-color: #ffffff;
+    color: #41c5d3;
+}
+
+button.primary-style {
+    background-color: #41c5d3;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.network-response {
+    font-size: 18px;
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}
+
+.connection-logo {
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+@media only screen and (max-width: 400px) {
+    .livinglab-logo {
+        width: 250px;
+    }
+
+    .connection-logo {
+        width: 200px;
+    }
+
+    .sel-logo {
+        width: 100px;
+    }
+
+    .main-body, .network-response {
+        font-size: 12px !important;
+    }
+    .form h5, .form-title-2 {
+        font-size: 14px !important;
+    }
+    button {
+        font-size: 12px !important;
+    }
+}
+
+.animated-logo {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: auto;
+    height: 30px;
+    margin: -15px -20px;
+
+
+    -webkit-animation:rotate360 1s linear infinite;
+    -moz-animation:rotate360 1s linear infinite;
+    animation:rotate360 1s linear infinite;
+}
+
+@-moz-keyframes rotate360 { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes rotate360 { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes rotate360 { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
